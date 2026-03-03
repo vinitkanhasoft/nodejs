@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #17a2b8;
+        }
+        .header h1 {
+            color: #17a2b8;
+            margin: 0;
+            font-size: 28px;
+        }
+        .content {
+            margin-bottom: 30px;
+        }
+        .content h2 {
+            color: #333;
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+        .content p {
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+        .button {
+            display: inline-block;
+            background-color: #17a2b8;
+            color: #ffffff;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            margin: 20px 0;
+            transition: background-color 0.3s;
+        }
+        .button:hover {
+            background-color: #138496;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            font-size: 14px;
+            color: #666;
+        }
+        .notification-box {
+            background-color: #d1ecf1;
+            border: 1px solid #bee5eb;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        .notification-box.info {
+            background-color: #d1ecf1;
+            border-color: #bee5eb;
+        }
+        .notification-box.success {
+            background-color: #d4edda;
+            border-color: #c3e6cb;
+        }
+        .notification-box.warning {
+            background-color: #fff3cd;
+            border-color: #ffeaa7;
+        }
+        .notification-box.error {
+            background-color: #f8d7da;
+            border-color: #f5c6cb;
+        }
+        .notification-box h3 {
+            margin-top: 0;
+            color: #0c5460;
+        }
+        .notification-box.success h3 {
+            color: #155724;
+        }
+        .notification-box.warning h3 {
+            color: #856404;
+        }
+        .notification-box.error h3 {
+            color: #721c24;
+        }
+        .action-items {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        .action-items h3 {
+            color: #495057;
+            margin-top: 0;
+        }
+        .action-items ul {
+            margin: 0;
+            padding-left: 20px;
+        }
+        .action-items li {
+            margin-bottom: 10px;
+        }
+        .metadata {
+            background-color: #e9ecef;
+            padding: 15px;
+            border-radius: 5px;
+            font-size: 14px;
+            color: #6c757d;
+        }
+        .metadata p {
+            margin: 5px 0;
+        }
+        .priority-high {
+            border-left: 5px solid #dc3545;
+        }
+        .priority-medium {
+            border-left: 5px solid #ffc107;
+        }
+        .priority-low {
+            border-left: 5px solid #28a745;
+        }
+    </style>
+</head>
+<body>
+    <div class="container priority-{{priority}}">
+        <div class="header">
+            <h1>{{icon}} {{title}}</h1>
+        </div>
+        
+        <div class="content">
+            <h2>Hi {{userName}},</h2>
+            
+            <div class="notification-box {{type}}">
+                <h3>{{notificationTitle}}</h3>
+                <p>{{message}}</p>
+            </div>
+            
+            {{#if actionUrl}}
+            <div style="text-align: center;">
+                <a href="{{actionUrl}}" class="button">{{actionText}}</a>
+            </div>
+            {{/if}}
+            
+            {{#if additionalInfo}}
+            <div class="action-items">
+                <h3>📋 Additional Information</h3>
+                <p>{{additionalInfo}}</p>
+            </div>
+            {{/if}}
+            
+            {{#if actionItems}}
+            <div class="action-items">
+                <h3>🎯 Required Actions</h3>
+                <ul>
+                    {{#each actionItems}}
+                    <li>{{this}}</li>
+                    {{/each}}
+                </ul>
+            </div>
+            {{/if}}
+            
+            {{#if importantNotice}}
+            <div class="notification-box warning">
+                <h3>⚠️ Important Notice</h3>
+                <p>{{importantNotice}}</p>
+            </div>
+            {{/if}}
+            
+            <div class="metadata">
+                <p><strong>Notification ID:</strong> {{notificationId}}</p>
+                <p><strong>Category:</strong> {{category}}</p>
+                <p><strong>Priority:</strong> {{priority}}</p>
+                <p><strong>Sent:</strong> {{timestamp}}</p>
+            </div>
+            
+            <p><strong>Need help?</strong></p>
+            <p>If you have any questions or concerns about this notification, please don't hesitate to contact our support team:</p>
+            <ul>
+                <li>Email: <a href="mailto:support@yourapp.com">support@yourapp.com</a></li>
+                <li>Help Center: <a href="{{helpCenterUrl}}">Visit our Help Center</a></li>
+                <li>Live Chat: Available 24/7 for premium members</li>
+            </ul>
+            
+            <p><strong>Notification Preferences:</strong></p>
+            <p>You can manage your notification preferences in your account settings. Choose which types of notifications you receive and through which channels (email, SMS, push, in-app).</p>
+        </div>
+        
+        <div class="footer">
+            <p>Best regards,<br>The Team</p>
+            <p><small>This is an automated message. Please do not reply to this email.</small></p>
+            <p><small>To unsubscribe from these notifications, <a href="{{unsubscribeUrl}}">click here</a></small></p>
+        </div>
+    </div>
+</body>
+</html>

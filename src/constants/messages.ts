@@ -1,0 +1,63 @@
+export const SUCCESS_MESSAGES = {
+  USER_CREATED: 'User created successfully',
+  USER_UPDATED: 'User updated successfully',
+  USER_DELETED: 'User deleted successfully',
+  LOGIN_SUCCESS: 'Login successful',
+  LOGOUT_SUCCESS: 'Logout successful',
+  EMAIL_SENT: 'Email sent successfully',
+  PASSWORD_UPDATED: 'Password updated successfully',
+  PROFILE_UPDATED: 'Profile updated successfully',
+  FILE_UPLOADED: 'File uploaded successfully',
+  FILE_DELETED: 'File deleted successfully',
+  OPERATION_SUCCESS: 'Operation completed successfully',
+} as const;
+
+export const ERROR_MESSAGES = {
+  INVALID_CREDENTIALS: 'Invalid email or password',
+  USER_NOT_FOUND: 'User not found',
+  EMAIL_ALREADY_EXISTS: 'Email already exists',
+  INVALID_TOKEN: 'Invalid or expired token',
+  ACCESS_DENIED: 'Access denied',
+  VALIDATION_ERROR: 'Validation failed',
+  SERVER_ERROR: 'Internal server error',
+  DATABASE_ERROR: 'Database operation failed',
+  EMAIL_SEND_FAILED: 'Failed to send email',
+  FILE_UPLOAD_FAILED: 'File upload failed',
+  INVALID_FILE_TYPE: 'Invalid file type',
+  FILE_TOO_LARGE: 'File size exceeds limit',
+  RATE_LIMIT_EXCEEDED: 'Rate limit exceeded',
+  ACCOUNT_SUSPENDED: 'Account suspended',
+  ACCOUNT_NOT_VERIFIED: 'Account not verified',
+  PASSWORDS_DO_NOT_MATCH: 'Passwords do not match',
+  CURRENT_PASSWORD_INCORRECT: 'Current password is incorrect',
+  UNAUTHORIZED_ACTION: 'Unauthorized action',
+  RESOURCE_NOT_FOUND: 'Resource not found',
+  DUPLICATE_RESOURCE: 'Resource already exists',
+} as const;
+
+export const VALIDATION_MESSAGES = {
+  REQUIRED: 'This field is required',
+  INVALID_EMAIL: 'Please enter a valid email address',
+  INVALID_PASSWORD: 'Password must be at least 8 characters long',
+  PASSWORD_TOO_WEAK: 'Password is too weak',
+  INVALID_PHONE: 'Please enter a valid phone number',
+  INVALID_URL: 'Please enter a valid URL',
+  INVALID_DATE: 'Please enter a valid date',
+  MIN_LENGTH: (min: number) => `Must be at least ${min} characters long`,
+  MAX_LENGTH: (max: number) => `Must be no more than ${max} characters long`,
+  INVALID_FORMAT: 'Invalid format',
+  INVALID_NUMBER: 'Please enter a valid number',
+  NUMBER_OUT_OF_RANGE: (min: number, max: number) => `Must be between ${min} and ${max}`,
+} as const;
+
+export const INFO_MESSAGES = {
+  WELCOME: 'Welcome to our platform!',
+  VERIFY_EMAIL: 'Please verify your email address',
+  PASSWORD_RESET_SENT: 'Password reset link sent to your email',
+  ACCOUNT_CREATED: 'Your account has been created successfully',
+  EMAIL_VERIFIED: 'Email verified successfully',
+  PASSWORD_CHANGED: 'Your password has been changed successfully',
+  PROFILE_UPDATED: 'Your profile has been updated successfully',
+  LOGOUT_WARNING: 'You are about to be logged out due to inactivity',
+  MAINTENANCE_MODE: 'System is under maintenance. Please try again later.',
+} as const;

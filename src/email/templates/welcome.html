@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Our Platform</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #007bff;
+        }
+        .header h1 {
+            color: #007bff;
+            margin: 0;
+            font-size: 28px;
+        }
+        .content {
+            margin-bottom: 30px;
+        }
+        .content h2 {
+            color: #333;
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+        .content p {
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+        .button {
+            display: inline-block;
+            background-color: #007bff;
+            color: #ffffff;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            margin: 20px 0;
+            transition: background-color 0.3s;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            font-size: 14px;
+            color: #666;
+        }
+        .feature-list {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        .feature-list h3 {
+            color: #007bff;
+            margin-top: 0;
+        }
+        .feature-list ul {
+            margin: 0;
+            padding-left: 20px;
+        }
+        .feature-list li {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Welcome, {{userName}}! 🎉</h1>
+        </div>
+        
+        <div class="content">
+            <h2>Thank you for joining our platform!</h2>
+            <p>We're excited to have you on board. Your account has been successfully created with the email <strong>{{userEmail}}</strong>.</p>
+            
+            <div class="feature-list">
+                <h3>What's Next?</h3>
+                <ul>
+                    <li>✅ <strong>Verify your email</strong> - Check your inbox for a verification email</li>
+                    <li>👤 <strong>Complete your profile</strong> - Add your personal information and preferences</li>
+                    <li>🔔 <strong>Set up notifications</strong> - Choose how you want to stay updated</li>
+                    <li>🔒 <strong>Enable 2FA</strong> - Add an extra layer of security to your account</li>
+                </ul>
+            </div>
+            
+            <p>Getting started is easy! Simply click the button below to verify your email address and unlock all features:</p>
+            
+            <div style="text-align: center;">
+                <a href="{{verificationUrl}}" class="button">Verify Email Address</a>
+            </div>
+            
+            <p><strong>Important:</strong> This verification link will expire in 24 hours. If you don't verify your email, some features may be limited.</p>
+            
+            <p>If you have any questions or need help, don't hesitate to reach out to our support team at <a href="mailto:support@yourapp.com">support@yourapp.com</a>.</p>
+        </div>
+        
+        <div class="footer">
+            <p>Best regards,<br>The Team</p>
+            <p><small>This is an automated message. Please do not reply to this email.</small></p>
+        </div>
+    </div>
+</body>
+</html>

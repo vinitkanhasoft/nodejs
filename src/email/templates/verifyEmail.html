@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verify Your Email Address</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #28a745;
+        }
+        .header h1 {
+            color: #28a745;
+            margin: 0;
+            font-size: 28px;
+        }
+        .content {
+            margin-bottom: 30px;
+        }
+        .content h2 {
+            color: #333;
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+        .content p {
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+        .button {
+            display: inline-block;
+            background-color: #28a745;
+            color: #ffffff;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            margin: 20px 0;
+            transition: background-color 0.3s;
+        }
+        .button:hover {
+            background-color: #218838;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            font-size: 14px;
+            color: #666;
+        }
+        .info-box {
+            background-color: #d4edda;
+            border: 1px solid #c3e6cb;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        .info-box h3 {
+            color: #155724;
+            margin-top: 0;
+        }
+        .benefits {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        .benefits h3 {
+            color: #28a745;
+            margin-top: 0;
+        }
+        .benefits ul {
+            margin: 0;
+            padding-left: 20px;
+        }
+        .benefits li {
+            margin-bottom: 10px;
+        }
+        .code-box {
+            background-color: #f8f9fa;
+            border: 2px dashed #6c757d;
+            padding: 15px;
+            text-align: center;
+            font-family: monospace;
+            font-size: 16px;
+            letter-spacing: 1px;
+            margin: 20px 0;
+            border-radius: 5px;
+            word-break: break-all;
+        }
+        .steps {
+            counter-reset: step-counter;
+        }
+        .step {
+            position: relative;
+            padding-left: 40px;
+            margin-bottom: 20px;
+        }
+        .step::before {
+            counter-increment: step-counter;
+            content: counter(step-counter);
+            position: absolute;
+            left: 0;
+            top: 0;
+            background-color: #28a745;
+            color: white;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>✉️ Verify Your Email Address</h1>
+        </div>
+        
+        <div class="content">
+            <h2>Hi {{userName}},</h2>
+            <p>Thank you for signing up! To complete your registration and unlock all features, please verify your email address: <strong>{{userEmail}}</strong>.</p>
+            
+            <div style="text-align: center;">
+                <a href="{{verificationUrl}}" class="button">Verify Email Address</a>
+            </div>
+            
+            <p>Or copy and paste this link in your browser:</p>
+            <div class="code-box">{{verificationUrl}}</div>
+            
+            <div class="info-box">
+                <h3>⏰ Time-Sensitive</h3>
+                <p><strong>This verification link will expire in 24 hours.</strong> After that, you'll need to request a new verification email.</p>
+            </div>
+            
+            <div class="benefits">
+                <h3>🎯 Why Verify Your Email?</h3>
+                <ul>
+                    <li><strong>Full Access</strong> - Unlock all platform features and functionality</li>
+                    <li><strong>Security</strong> - Protect your account with verified contact information</li>
+                    <li><strong>Communication</strong> - Receive important updates and notifications</li>
+                    <li><strong>Recovery</strong> - Enable password reset and account recovery options</li>
+                    <li><strong>Trust</strong> - Build credibility with other users on the platform</li>
+                </ul>
+            </div>
+            
+            <h3>📋 Quick Steps to Get Started:</h3>
+            <div class="steps">
+                <div class="step">
+                    <strong>Click the verification button above</strong> or copy the link into your browser
+                </div>
+                <div class="step">
+                    <strong>Complete your profile</strong> by adding your personal information and preferences
+                </div>
+                <div class="step">
+                    <strong>Set up notifications</strong> to stay updated on important activities
+                </div>
+                <div class="step">
+                    <strong>Enable two-factor authentication</strong> for enhanced security
+                </div>
+            </div>
+            
+            <p><strong>Having trouble?</strong></p>
+            <ul>
+                <li>Make sure you're clicking the most recent verification email</li>
+                <li>Check that the link hasn't expired (24-hour limit)</li>
+                <li>If the link doesn't work, try copying and pasting it manually</li>
+                <li>Add our email address to your contacts to avoid future delivery issues</li>
+            </ul>
+        </div>
+        
+        <div class="footer">
+            <p>Best regards,<br>The Team</p>
+            <p><small>This is an automated message. Please do not reply to this email.</small></p>
+            <p><small>If you didn't create an account, please contact <a href="mailto:support@yourapp.com">support@yourapp.com</a></small></p>
+        </div>
+    </div>
+</body>
+</html>
